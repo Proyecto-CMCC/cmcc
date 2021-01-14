@@ -530,7 +530,7 @@
       /*! rxjs/operators */
       "./node_modules/rxjs/_esm2015/operators/index.js");
 
-      var URL = "http://127.0.0.1:5000/api/auth";
+      var URL = "https://prueba-api.plexdescargas.com/api/auth";
 
       var AuthService = /*#__PURE__*/function () {
         function AuthService(http) {

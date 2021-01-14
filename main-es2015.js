@@ -488,7 +488,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const URL = "http://127.0.0.1:5000/api/auth";
+const URL = "https://prueba-api.plexdescargas.com/api/auth";
 let AuthService = class AuthService {
     constructor(http) {
         this.http = http;

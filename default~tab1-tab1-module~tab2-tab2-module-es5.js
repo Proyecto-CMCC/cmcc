@@ -988,7 +988,7 @@
       /*! @angular/common/http */
       "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/http.js");
 
-      var URL = "http://127.0.0.1:5000/api/search";
+      var URL = "https://prueba-api.plexdescargas.com/api/search";
 
       var JustwatchService = /*#__PURE__*/function () {
         function JustwatchService(http) {
