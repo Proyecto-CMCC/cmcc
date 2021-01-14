@@ -48,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border\">\n  <ion-toolbar>\n    <ion-title class=\"ion-text-center\">\n      <img [src]=logoUrl class=\"logo-header\">\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n\n\n    <ion-row>\n      <ion-col>\n        <h4>Estrenos</h4>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow-big [films]=\"recentFilms\"></app-slideshow-big>\n\n    <ion-row>\n      <ion-col>\n        <h6>Últimas Tendencias</h6>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow [films]=\"trendingAll\"></app-slideshow>\n\n    <ion-row>\n      <ion-col>\n        <h6>Películas Populares</h6>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow-pares [films]=\"popularFilms\"\n                        (loadMore)=\"loadMorePopularFilms()\"\n  ></app-slideshow-pares>\n\n    <ion-row>\n      <ion-col>\n        <h6>Series más vistas esta semana</h6>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow [films]=\"trendingSeries\"></app-slideshow>\n\n    <ion-row>\n      <ion-col>\n        <h6>Series más populares</h6>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow [films]=\"populartSeries\"></app-slideshow>\n\n  <br>\n  <br>\n\n</ion-content>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<ion-header class=\"ion-no-border\">\n  <ion-toolbar>\n\n    <ion-title slot=\"primary\" class=\"ion-text-left\">\n      <img [src]=logoUrl class=\"logo-header\">\n    </ion-title>\n\n    <ion-buttons slot=\"end\" *ngIf=\"!auth\">\n      <ion-button (click)=\"login()\" color=\"primary\" class=\"login-btn\" >\n        {{loginText}}\n        <ion-icon name=\"enter\" slot=\"end\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n\n    <ion-buttons slot=\"end\" *ngIf=\"auth\">\n      <ion-button (click)=\"login()\" color=\"primary\" class=\"login-btn\" >\n        <ion-icon name=\"person\" slot=\"end\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n\n\n    <ion-row>\n      <ion-col>\n        <ion-text color=\"primary\">\n        <h4>Estrenos</h4>\n        </ion-text>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow-big [films]=\"recentFilms\"></app-slideshow-big>\n\n    <ion-row>\n      <ion-col>\n        <ion-text color=\"primary\">\n        <h6>Últimas Tendencias</h6>\n        </ion-text>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow [films]=\"trendingAll\"></app-slideshow>\n\n    <ion-row>\n      <ion-col>\n        <ion-text color=\"primary\">\n        <h6>Películas Populares</h6>\n        </ion-text>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow-pares [films]=\"popularFilms\"\n                        (loadMore)=\"loadMorePopularFilms()\"\n  ></app-slideshow-pares>\n\n    <ion-row>\n      <ion-col>\n        <ion-text color=\"primary\">\n        <h6>Series más vistas esta semana</h6>\n        </ion-text>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow [films]=\"trendingSeries\"></app-slideshow>\n\n    <ion-row>\n      <ion-col>\n        <ion-text color=\"primary\">\n          <h6>Series más populares</h6>\n        </ion-text>\n      </ion-col>\n    </ion-row>\n\n  <app-slideshow [films]=\"populartSeries\"></app-slideshow>\n\n  <br>\n  <br>\n\n</ion-content>\n");
 
 /***/ }),
 
@@ -521,7 +521,7 @@ Tab1PageModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("ion-header {\n  --background-color: transparent;\n  --ion-color-base: transparent !important;\n}\n\nion-toolbar {\n  --background-color: transparent;\n  --ion-color-base: transparent !important;\n}\n\nh4 {\n  color: #2ffc8d;\n}\n\nh6 {\n  color: #03e370;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFiMS90YWIxLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNHLCtCQUFBO0VBQ0Esd0NBQUE7QUFDSDs7QUFFQztFQUNFLCtCQUFBO0VBQ0Esd0NBQUE7QUFDSDs7QUFFQztFQUNFLGNBQUE7QUFDSDs7QUFFQztFQUNFLGNBQUE7QUFDSCIsImZpbGUiOiJzcmMvYXBwL3RhYjEvdGFiMS5wYWdlLnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyJpb24taGVhZGVyIHtcbiAgIC0tYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAtLWlvbi1jb2xvci1iYXNlOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xuIH1cblxuIGlvbi10b29sYmFyIHtcbiAgIC0tYmFja2dyb3VuZC1jb2xvcjogdHJhbnNwYXJlbnQ7XG4gICAtLWlvbi1jb2xvci1iYXNlOiB0cmFuc3BhcmVudCAhaW1wb3J0YW50O1xuIH1cblxuIGg0e1xuICAgY29sb3I6ICMyZmZjOGQ7XG4gfVxuXG4gaDZ7XG4gICBjb2xvcjojMDNlMzcwO1xuIH1cbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = ("ion-header {\n  --background-color: transparent;\n  --ion-color-base: transparent !important;\n}\n\nion-toolbar {\n  --background-color: transparent;\n  --ion-color-base: transparent !important;\n}\n\n.login-btn {\n  text-transform: capitalize;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvdGFiMS90YWIxLnBhZ2Uuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNHLCtCQUFBO0VBQ0Esd0NBQUE7QUFDSDs7QUFFQztFQUNFLCtCQUFBO0VBQ0Esd0NBQUE7QUFDSDs7QUFHQTtFQUNFLDBCQUFBO0FBQUYiLCJmaWxlIjoic3JjL2FwcC90YWIxL3RhYjEucGFnZS5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW9uLWhlYWRlciB7XG4gICAtLWJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICAgLS1pb24tY29sb3ItYmFzZTogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcbiB9XG5cbiBpb24tdG9vbGJhciB7XG4gICAtLWJhY2tncm91bmQtY29sb3I6IHRyYW5zcGFyZW50O1xuICAgLS1pb24tY29sb3ItYmFzZTogdHJhbnNwYXJlbnQgIWltcG9ydGFudDtcbiB9XG5cblxuLmxvZ2luLWJ0bntcbiAgdGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XG59XG4iXX0= */");
 
 /***/ }),
 
@@ -538,18 +538,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
 /* harmony import */ var _services_tmdb_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/tmdb.service */ "./src/app/services/tmdb.service.ts");
+/* harmony import */ var _ionic_angular__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ionic/angular */ "./node_modules/@ionic/angular/__ivy_ngcc__/fesm2015/ionic-angular.js");
+/* harmony import */ var _auth_pages_login_login_page__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../auth/pages/login/login.page */ "./src/app/auth/pages/login/login.page.ts");
+/* harmony import */ var _auth_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../auth/auth.service */ "./src/app/auth/auth.service.ts");
 
 
 
+
+
+
+const screenWidthBreakPoint = 420;
 let Tab1Page = class Tab1Page {
-    constructor(tmdb) {
+    constructor(tmdb, modalController, authService) {
         this.tmdb = tmdb;
+        this.modalController = modalController;
+        this.authService = authService;
         this.logoUrl = "../../assets/logo.svg";
         this.recentFilms = [];
         this.trendingAll = [];
         this.popularFilms = [];
         this.trendingSeries = [];
         this.populartSeries = [];
+        this.loginText = "";
+        this.auth = false;
     }
     ngOnInit() {
         this.getRecentFilms();
@@ -557,6 +568,20 @@ let Tab1Page = class Tab1Page {
         this.getTrendings();
         this.getTrendingSeries();
         this.getPopularSeries();
+        this.setLoginText();
+        this.isAuth();
+    }
+    isAuth() {
+        this.authService.whoAmI().subscribe(res => this.auth = true);
+    }
+    setLoginText(event) {
+        this.screenWidth = window.innerWidth;
+        if (this.screenWidth > screenWidthBreakPoint) {
+            this.loginText = "Login";
+        }
+        else {
+            this.loginText = "";
+        }
     }
     getRecentFilms() {
         this.tmdb.getMoviesOfMonth().subscribe(res => {
@@ -595,10 +620,24 @@ let Tab1Page = class Tab1Page {
             return false;
         }
     }
+    login() {
+        return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
+            const loginModal = yield this.modalController.create({
+                component: _auth_pages_login_login_page__WEBPACK_IMPORTED_MODULE_4__["LoginPage"],
+            });
+            loginModal.onDidDismiss().then(data => { this.isAuth(); });
+            return yield loginModal.present();
+        });
+    }
 };
 Tab1Page.ctorParameters = () => [
-    { type: _services_tmdb_service__WEBPACK_IMPORTED_MODULE_2__["TmdbService"] }
+    { type: _services_tmdb_service__WEBPACK_IMPORTED_MODULE_2__["TmdbService"] },
+    { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_3__["ModalController"] },
+    { type: _auth_auth_service__WEBPACK_IMPORTED_MODULE_5__["AuthService"] }
 ];
+Tab1Page.propDecorators = {
+    setLoginText: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["HostListener"], args: ['window:resize', ['$event'],] }]
+};
 Tab1Page = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-tab1',
