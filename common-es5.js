@@ -1,13 +1,19 @@
 (function () {
-  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+  function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+  function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
   function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
   function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
+  function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
   (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["common"], {
     /***/
-    "./node_modules/@ionic/core/dist/esm/button-active-a6787d69.js":
+    "0/6H":
     /*!*********************************************************************!*\
       !*** ./node_modules/@ionic/core/dist/esm/button-active-a6787d69.js ***!
       \*********************************************************************/
@@ -15,7 +21,7 @@
     /*! exports provided: c */
 
     /***/
-    function node_modulesIonicCoreDistEsmButtonActiveA6787d69Js(module, __webpack_exports__, __webpack_require__) {
+    function H(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -30,19 +36,19 @@
 
       var _index_e806d1f6_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
       /*! ./index-e806d1f6.js */
-      "./node_modules/@ionic/core/dist/esm/index-e806d1f6.js");
+      "A36C");
       /* harmony import */
 
 
       var _index_f49d994d_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
       /*! ./index-f49d994d.js */
-      "./node_modules/@ionic/core/dist/esm/index-f49d994d.js");
+      "iWo5");
       /* harmony import */
 
 
       var _haptic_27b3f981_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
       /*! ./haptic-27b3f981.js */
-      "./node_modules/@ionic/core/dist/esm/haptic-27b3f981.js");
+      "qULd");
 
       var createButtonActiveGesture = function createButtonActiveGesture(el, isButton) {
         var currentTouchedButton;
@@ -129,7 +135,426 @@
     },
 
     /***/
-    "./node_modules/@ionic/core/dist/esm/framework-delegate-4584ab5a.js":
+    "74mu":
+    /*!*************************************************************!*\
+      !*** ./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js ***!
+      \*************************************************************/
+
+    /*! exports provided: c, g, h, o */
+
+    /***/
+    function mu(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "c", function () {
+        return createColorClasses;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "g", function () {
+        return getClassMap;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "h", function () {
+        return hostContext;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "o", function () {
+        return openURL;
+      });
+
+      var hostContext = function hostContext(selector, el) {
+        return el.closest(selector) !== null;
+      };
+      /**
+       * Create the mode and color classes for the component based on the classes passed in
+       */
+
+
+      var createColorClasses = function createColorClasses(color, cssClassMap) {
+        return typeof color === 'string' && color.length > 0 ? Object.assign(_defineProperty({
+          'ion-color': true
+        }, "ion-color-".concat(color), true), cssClassMap) : cssClassMap;
+      };
+
+      var getClassList = function getClassList(classes) {
+        if (classes !== undefined) {
+          var array = Array.isArray(classes) ? classes : classes.split(' ');
+          return array.filter(function (c) {
+            return c != null;
+          }).map(function (c) {
+            return c.trim();
+          }).filter(function (c) {
+            return c !== '';
+          });
+        }
+
+        return [];
+      };
+
+      var getClassMap = function getClassMap(classes) {
+        var map = {};
+        getClassList(classes).forEach(function (c) {
+          return map[c] = true;
+        });
+        return map;
+      };
+
+      var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
+
+      var openURL = /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(url, ev, direction, animation) {
+          var router;
+          return regeneratorRuntime.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  if (!(url != null && url[0] !== '#' && !SCHEME.test(url))) {
+                    _context.next = 5;
+                    break;
+                  }
+
+                  router = document.querySelector('ion-router');
+
+                  if (!router) {
+                    _context.next = 5;
+                    break;
+                  }
+
+                  if (ev != null) {
+                    ev.preventDefault();
+                  }
+
+                  return _context.abrupt("return", router.push(url, direction, animation));
+
+                case 5:
+                  return _context.abrupt("return", false);
+
+                case 6:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function openURL(_x, _x2, _x3, _x4) {
+          return _ref.apply(this, arguments);
+        };
+      }();
+      /***/
+
+    },
+
+    /***/
+    "QQAA":
+    /*!******************************************************************!*\
+      !*** ./src/app/explore-container/explore-container.component.ts ***!
+      \******************************************************************/
+
+    /*! exports provided: ExploreContainerComponent */
+
+    /***/
+    function QQAA(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ExploreContainerComponent", function () {
+        return ExploreContainerComponent;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _raw_loader_explore_container_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! raw-loader!./explore-container.component.html */
+      "m1kx");
+      /* harmony import */
+
+
+      var _explore_container_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ./explore-container.component.scss */
+      "huSS");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var ExploreContainerComponent = /*#__PURE__*/function () {
+        function ExploreContainerComponent() {
+          _classCallCheck(this, ExploreContainerComponent);
+        }
+
+        _createClass(ExploreContainerComponent, [{
+          key: "ngOnInit",
+          value: function ngOnInit() {}
+        }]);
+
+        return ExploreContainerComponent;
+      }();
+
+      ExploreContainerComponent.ctorParameters = function () {
+        return [];
+      };
+
+      ExploreContainerComponent.propDecorators = {
+        name: [{
+          type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }]
+      };
+      ExploreContainerComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-explore-container',
+        template: _raw_loader_explore_container_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_explore_container_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+      })], ExploreContainerComponent);
+      /***/
+    },
+
+    /***/
+    "RMOD":
+    /*!************************************!*\
+      !*** ./src/app/pipes/hour.pipe.ts ***!
+      \************************************/
+
+    /*! exports provided: HourPipe */
+
+    /***/
+    function RMOD(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "HourPipe", function () {
+        return HourPipe;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var HourPipe = /*#__PURE__*/function () {
+        function HourPipe() {
+          _classCallCheck(this, HourPipe);
+        }
+
+        _createClass(HourPipe, [{
+          key: "transform",
+          value: function transform(minutes) {
+            var htext = " horas ";
+            var mtext = " minutos ";
+
+            if (minutes > 59) {
+              var hours = minutes / 60;
+              var rhours = Math.floor(hours);
+              var mins = (hours - rhours) * 60;
+              var rmins = Math.round(mins);
+
+              if (rhours < 2) {
+                htext = " hora ";
+              }
+
+              if (rmins < 2) {
+                mtext = " minuto ";
+              }
+
+              return rhours + htext + rmins + mtext;
+            }
+
+            return minutes.toString() + mtext;
+          }
+        }]);
+
+        return HourPipe;
+      }();
+
+      HourPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'hour'
+      })], HourPipe);
+      /***/
+    },
+
+    /***/
+    "SGa8":
+    /*!*******************************************!*\
+      !*** ./src/app/pipes/url-favicon.pipe.ts ***!
+      \*******************************************/
+
+    /*! exports provided: UrlFaviconPipe */
+
+    /***/
+    function SGa8(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "UrlFaviconPipe", function () {
+        return UrlFaviconPipe;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var UrlFaviconPipe = /*#__PURE__*/function () {
+        function UrlFaviconPipe() {
+          _classCallCheck(this, UrlFaviconPipe);
+        }
+
+        _createClass(UrlFaviconPipe, [{
+          key: "transform",
+          value: function transform(img) {
+            var faviconUrl = img;
+
+            if (faviconUrl.indexOf('netflix') > 0) {
+              return './assets/netflix_icon.png';
+            }
+
+            if (faviconUrl.indexOf('hbo') > 0) {
+              return './assets/hbo_icon.png';
+            }
+
+            if (faviconUrl.indexOf('movistar') > 0) {
+              return './assets/movistar_icon.png';
+            }
+
+            if (faviconUrl.indexOf('primevideo') > 0) {
+              return './assets/amazon_icon.png';
+            }
+
+            if (faviconUrl.indexOf('apple') > 0) {
+              return './assets/apple_icon.png';
+            }
+
+            if (faviconUrl.indexOf('filmin') > 0) {
+              return './assets/filmin_icon.png';
+            }
+
+            if (faviconUrl.indexOf('google') > 0) {
+              return './assets/google_icon.png';
+            }
+
+            if (faviconUrl.indexOf('microsoft') > 0) {
+              return './assets/microsoft_icon.png';
+            }
+
+            return "https://www.google.com/s2/favicons?domain=" + img;
+          }
+        }]);
+
+        return UrlFaviconPipe;
+      }();
+
+      UrlFaviconPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'urlFavicon'
+      })], UrlFaviconPipe);
+      /***/
+    },
+
+    /***/
+    "Sh9B":
+    /*!*************************************!*\
+      !*** ./src/app/pipes/pares.pipe.ts ***!
+      \*************************************/
+
+    /*! exports provided: ParesPipe */
+
+    /***/
+    function Sh9B(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ParesPipe", function () {
+        return ParesPipe;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var ParesPipe = /*#__PURE__*/function () {
+        function ParesPipe() {
+          _classCallCheck(this, ParesPipe);
+        }
+
+        _createClass(ParesPipe, [{
+          key: "transform",
+          value: function transform(arr) {
+            if (arr == undefined) {
+              return;
+            }
+
+            var pares = arr.reduce(function (result, value, index, array) {
+              if (index % 2 === 0) {
+                result.push(array.slice(index, index + 2));
+              }
+
+              return result;
+            }, []);
+            return pares;
+          }
+        }]);
+
+        return ParesPipe;
+      }();
+
+      ParesPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'pares'
+      })], ParesPipe);
+      /***/
+    },
+
+    /***/
+    "ZaV5":
     /*!**************************************************************************!*\
       !*** ./node_modules/@ionic/core/dist/esm/framework-delegate-4584ab5a.js ***!
       \**************************************************************************/
@@ -137,7 +562,7 @@
     /*! exports provided: a, d */
 
     /***/
-    function node_modulesIonicCoreDistEsmFrameworkDelegate4584ab5aJs(module, __webpack_exports__, __webpack_require__) {
+    function ZaV5(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -155,22 +580,22 @@
       });
 
       var attachComponent = /*#__PURE__*/function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(delegate, container, component, cssClasses, componentProps) {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(delegate, container, component, cssClasses, componentProps) {
           var el;
-          return regeneratorRuntime.wrap(function _callee$(_context) {
+          return regeneratorRuntime.wrap(function _callee2$(_context2) {
             while (1) {
-              switch (_context.prev = _context.next) {
+              switch (_context2.prev = _context2.next) {
                 case 0:
                   if (!delegate) {
-                    _context.next = 2;
+                    _context2.next = 2;
                     break;
                   }
 
-                  return _context.abrupt("return", delegate.attachViewToDom(container, component, componentProps, cssClasses));
+                  return _context2.abrupt("return", delegate.attachViewToDom(container, component, componentProps, cssClasses));
 
                 case 2:
                   if (!(typeof component !== 'string' && !(component instanceof HTMLElement))) {
-                    _context.next = 4;
+                    _context2.next = 4;
                     break;
                   }
 
@@ -192,26 +617,26 @@
                   container.appendChild(el);
 
                   if (!el.componentOnReady) {
-                    _context.next = 11;
+                    _context2.next = 11;
                     break;
                   }
 
-                  _context.next = 11;
+                  _context2.next = 11;
                   return el.componentOnReady();
 
                 case 11:
-                  return _context.abrupt("return", el);
+                  return _context2.abrupt("return", el);
 
                 case 12:
                 case "end":
-                  return _context.stop();
+                  return _context2.stop();
               }
             }
-          }, _callee);
+          }, _callee2);
         }));
 
-        return function attachComponent(_x, _x2, _x3, _x4, _x5) {
-          return _ref.apply(this, arguments);
+        return function attachComponent(_x5, _x6, _x7, _x8, _x9) {
+          return _ref2.apply(this, arguments);
         };
       }();
 
@@ -232,7 +657,332 @@
     },
 
     /***/
-    "./node_modules/@ionic/core/dist/esm/haptic-27b3f981.js":
+    "bruO":
+    /*!*************************************!*\
+      !*** ./src/app/pipes/image.pipe.ts ***!
+      \*************************************/
+
+    /*! exports provided: ImagePipe */
+
+    /***/
+    function bruO(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "ImagePipe", function () {
+        return ImagePipe;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! ../../environments/environment */
+      "AytR");
+
+      var URL = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].tmdbImagePath;
+
+      var ImagePipe = /*#__PURE__*/function () {
+        function ImagePipe() {
+          _classCallCheck(this, ImagePipe);
+        }
+
+        _createClass(ImagePipe, [{
+          key: "transform",
+          value: function transform(img) {
+            var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'original';
+
+            if (!img) {
+              return './assets/no-image-banner.jpg';
+            }
+
+            var imgUrl = "".concat(URL, "/").concat(size, "/").concat(img);
+            return imgUrl;
+          }
+        }]);
+
+        return ImagePipe;
+      }();
+
+      ImagePipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'image'
+      })], ImagePipe);
+      /***/
+    },
+
+    /***/
+    "h3R7":
+    /*!***********************************************************************!*\
+      !*** ./node_modules/@ionic/core/dist/esm/spinner-configs-cd7845af.js ***!
+      \***********************************************************************/
+
+    /*! exports provided: S */
+
+    /***/
+    function h3R7(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "S", function () {
+        return SPINNERS;
+      });
+
+      var spinners = {
+        'bubbles': {
+          dur: 1000,
+          circles: 9,
+          fn: function fn(dur, index, total) {
+            var animationDelay = "".concat(dur * index / total - dur, "ms");
+            var angle = 2 * Math.PI * index / total;
+            return {
+              r: 5,
+              style: {
+                'top': "".concat(9 * Math.sin(angle), "px"),
+                'left': "".concat(9 * Math.cos(angle), "px"),
+                'animation-delay': animationDelay
+              }
+            };
+          }
+        },
+        'circles': {
+          dur: 1000,
+          circles: 8,
+          fn: function fn(dur, index, total) {
+            var step = index / total;
+            var animationDelay = "".concat(dur * step - dur, "ms");
+            var angle = 2 * Math.PI * step;
+            return {
+              r: 5,
+              style: {
+                'top': "".concat(9 * Math.sin(angle), "px"),
+                'left': "".concat(9 * Math.cos(angle), "px"),
+                'animation-delay': animationDelay
+              }
+            };
+          }
+        },
+        'circular': {
+          dur: 1400,
+          elmDuration: true,
+          circles: 1,
+          fn: function fn() {
+            return {
+              r: 20,
+              cx: 48,
+              cy: 48,
+              fill: 'none',
+              viewBox: '24 24 48 48',
+              transform: 'translate(0,0)',
+              style: {}
+            };
+          }
+        },
+        'crescent': {
+          dur: 750,
+          circles: 1,
+          fn: function fn() {
+            return {
+              r: 26,
+              style: {}
+            };
+          }
+        },
+        'dots': {
+          dur: 750,
+          circles: 3,
+          fn: function fn(_, index) {
+            var animationDelay = -(110 * index) + 'ms';
+            return {
+              r: 6,
+              style: {
+                'left': "".concat(9 - 9 * index, "px"),
+                'animation-delay': animationDelay
+              }
+            };
+          }
+        },
+        'lines': {
+          dur: 1000,
+          lines: 12,
+          fn: function fn(dur, index, total) {
+            var transform = "rotate(".concat(30 * index + (index < 6 ? 180 : -180), "deg)");
+            var animationDelay = "".concat(dur * index / total - dur, "ms");
+            return {
+              y1: 17,
+              y2: 29,
+              style: {
+                'transform': transform,
+                'animation-delay': animationDelay
+              }
+            };
+          }
+        },
+        'lines-small': {
+          dur: 1000,
+          lines: 12,
+          fn: function fn(dur, index, total) {
+            var transform = "rotate(".concat(30 * index + (index < 6 ? 180 : -180), "deg)");
+            var animationDelay = "".concat(dur * index / total - dur, "ms");
+            return {
+              y1: 12,
+              y2: 20,
+              style: {
+                'transform': transform,
+                'animation-delay': animationDelay
+              }
+            };
+          }
+        }
+      };
+      var SPINNERS = spinners;
+      /***/
+    },
+
+    /***/
+    "huSS":
+    /*!********************************************************************!*\
+      !*** ./src/app/explore-container/explore-container.component.scss ***!
+      \********************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function huSS(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "#container {\n  text-align: center;\n  position: absolute;\n  left: 0;\n  right: 0;\n  top: 50%;\n  transform: translateY(-50%);\n}\n\n#container strong {\n  font-size: 20px;\n  line-height: 26px;\n}\n\n#container p {\n  font-size: 16px;\n  line-height: 22px;\n  color: #8c8c8c;\n  margin: 0;\n}\n\n#container a {\n  text-decoration: none;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uL2V4cGxvcmUtY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usa0JBQUE7RUFFQSxrQkFBQTtFQUNBLE9BQUE7RUFDQSxRQUFBO0VBQ0EsUUFBQTtFQUNBLDJCQUFBO0FBQUY7O0FBR0E7RUFDRSxlQUFBO0VBQ0EsaUJBQUE7QUFBRjs7QUFHQTtFQUNFLGVBQUE7RUFDQSxpQkFBQTtFQUVBLGNBQUE7RUFFQSxTQUFBO0FBRkY7O0FBS0E7RUFDRSxxQkFBQTtBQUZGIiwiZmlsZSI6ImV4cGxvcmUtY29udGFpbmVyLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiI2NvbnRhaW5lciB7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcblxuICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gIGxlZnQ6IDA7XG4gIHJpZ2h0OiAwO1xuICB0b3A6IDUwJTtcbiAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKC01MCUpO1xufVxuXG4jY29udGFpbmVyIHN0cm9uZyB7XG4gIGZvbnQtc2l6ZTogMjBweDtcbiAgbGluZS1oZWlnaHQ6IDI2cHg7XG59XG5cbiNjb250YWluZXIgcCB7XG4gIGZvbnQtc2l6ZTogMTZweDtcbiAgbGluZS1oZWlnaHQ6IDIycHg7XG5cbiAgY29sb3I6ICM4YzhjOGM7XG5cbiAgbWFyZ2luOiAwO1xufVxuXG4jY29udGFpbmVyIGEge1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG59Il19 */";
+      /***/
+    },
+
+    /***/
+    "iTUp":
+    /*!***************************************!*\
+      !*** ./src/app/pipes/pipes.module.ts ***!
+      \***************************************/
+
+    /*! exports provided: PipesModule */
+
+    /***/
+    function iTUp(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "PipesModule", function () {
+        return PipesModule;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var _image_pipe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! ./image.pipe */
+      "bruO");
+      /* harmony import */
+
+
+      var _pares_pipe__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! ./pares.pipe */
+      "Sh9B");
+      /* harmony import */
+
+
+      var _year_pipe__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./year.pipe */
+      "xhhz");
+      /* harmony import */
+
+
+      var _url_favicon_pipe__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
+      /*! ./url-favicon.pipe */
+      "SGa8");
+      /* harmony import */
+
+
+      var _url_website_name_pipe__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+      /*! ./url-website-name.pipe */
+      "vx+v");
+      /* harmony import */
+
+
+      var _hour_pipe__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(
+      /*! ./hour.pipe */
+      "RMOD");
+
+      var PipesModule = function PipesModule() {
+        _classCallCheck(this, PipesModule);
+      };
+
+      PipesModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_image_pipe__WEBPACK_IMPORTED_MODULE_3__["ImagePipe"], _pares_pipe__WEBPACK_IMPORTED_MODULE_4__["ParesPipe"], _year_pipe__WEBPACK_IMPORTED_MODULE_5__["YearPipe"], _url_favicon_pipe__WEBPACK_IMPORTED_MODULE_6__["UrlFaviconPipe"], _url_website_name_pipe__WEBPACK_IMPORTED_MODULE_7__["UrlWebsiteNamePipe"], _hour_pipe__WEBPACK_IMPORTED_MODULE_8__["HourPipe"]],
+        exports: [_image_pipe__WEBPACK_IMPORTED_MODULE_3__["ImagePipe"], _pares_pipe__WEBPACK_IMPORTED_MODULE_4__["ParesPipe"], _year_pipe__WEBPACK_IMPORTED_MODULE_5__["YearPipe"], _url_favicon_pipe__WEBPACK_IMPORTED_MODULE_6__["UrlFaviconPipe"], _url_website_name_pipe__WEBPACK_IMPORTED_MODULE_7__["UrlWebsiteNamePipe"], _hour_pipe__WEBPACK_IMPORTED_MODULE_8__["HourPipe"]],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]]
+      })], PipesModule);
+      /***/
+    },
+
+    /***/
+    "m1kx":
+    /*!**********************************************************************************************************!*\
+      !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/explore-container/explore-container.component.html ***!
+      \**********************************************************************************************************/
+
+    /*! exports provided: default */
+
+    /***/
+    function m1kx(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony default export */
+
+
+      __webpack_exports__["default"] = "<div id=\"container\">\n  <strong>{{ name }}</strong>\n  <p>Explore <a target=\"_blank\" rel=\"noopener noreferrer\" href=\"https://ionicframework.com/docs/components\">UI Components</a></p>\n</div>";
+      /***/
+    },
+
+    /***/
+    "qULd":
     /*!**************************************************************!*\
       !*** ./node_modules/@ionic/core/dist/esm/haptic-27b3f981.js ***!
       \**************************************************************/
@@ -240,7 +990,7 @@
     /*! exports provided: a, b, c, d, h */
 
     /***/
-    function node_modulesIonicCoreDistEsmHaptic27b3f981Js(module, __webpack_exports__, __webpack_require__) {
+    function qULd(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
@@ -406,255 +1156,190 @@
     },
 
     /***/
-    "./node_modules/@ionic/core/dist/esm/spinner-configs-cd7845af.js":
-    /*!***********************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/spinner-configs-cd7845af.js ***!
-      \***********************************************************************/
+    "qtYk":
+    /*!***************************************************************!*\
+      !*** ./src/app/explore-container/explore-container.module.ts ***!
+      \***************************************************************/
 
-    /*! exports provided: S */
+    /*! exports provided: ExploreContainerComponentModule */
 
     /***/
-    function node_modulesIonicCoreDistEsmSpinnerConfigsCd7845afJs(module, __webpack_exports__, __webpack_require__) {
+    function qtYk(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
 
 
-      __webpack_require__.d(__webpack_exports__, "S", function () {
-        return SPINNERS;
+      __webpack_require__.d(__webpack_exports__, "ExploreContainerComponentModule", function () {
+        return ExploreContainerComponentModule;
       });
+      /* harmony import */
 
-      var spinners = {
-        'bubbles': {
-          dur: 1000,
-          circles: 9,
-          fn: function fn(dur, index, total) {
-            var animationDelay = "".concat(dur * index / total - dur, "ms");
-            var angle = 2 * Math.PI * index / total;
-            return {
-              r: 5,
-              style: {
-                'top': "".concat(9 * Math.sin(angle), "px"),
-                'left': "".concat(9 * Math.cos(angle), "px"),
-                'animation-delay': animationDelay
-              }
-            };
-          }
-        },
-        'circles': {
-          dur: 1000,
-          circles: 8,
-          fn: function fn(dur, index, total) {
-            var step = index / total;
-            var animationDelay = "".concat(dur * step - dur, "ms");
-            var angle = 2 * Math.PI * step;
-            return {
-              r: 5,
-              style: {
-                'top': "".concat(9 * Math.sin(angle), "px"),
-                'left': "".concat(9 * Math.cos(angle), "px"),
-                'animation-delay': animationDelay
-              }
-            };
-          }
-        },
-        'circular': {
-          dur: 1400,
-          elmDuration: true,
-          circles: 1,
-          fn: function fn() {
-            return {
-              r: 20,
-              cx: 48,
-              cy: 48,
-              fill: 'none',
-              viewBox: '24 24 48 48',
-              transform: 'translate(0,0)',
-              style: {}
-            };
-          }
-        },
-        'crescent': {
-          dur: 750,
-          circles: 1,
-          fn: function fn() {
-            return {
-              r: 26,
-              style: {}
-            };
-          }
-        },
-        'dots': {
-          dur: 750,
-          circles: 3,
-          fn: function fn(_, index) {
-            var animationDelay = -(110 * index) + 'ms';
-            return {
-              r: 6,
-              style: {
-                'left': "".concat(9 - 9 * index, "px"),
-                'animation-delay': animationDelay
-              }
-            };
-          }
-        },
-        'lines': {
-          dur: 1000,
-          lines: 12,
-          fn: function fn(dur, index, total) {
-            var transform = "rotate(".concat(30 * index + (index < 6 ? 180 : -180), "deg)");
-            var animationDelay = "".concat(dur * index / total - dur, "ms");
-            return {
-              y1: 17,
-              y2: 29,
-              style: {
-                'transform': transform,
-                'animation-delay': animationDelay
-              }
-            };
-          }
-        },
-        'lines-small': {
-          dur: 1000,
-          lines: 12,
-          fn: function fn(dur, index, total) {
-            var transform = "rotate(".concat(30 * index + (index < 6 ? 180 : -180), "deg)");
-            var animationDelay = "".concat(dur * index / total - dur, "ms");
-            return {
-              y1: 12,
-              y2: 20,
-              style: {
-                'transform': transform,
-                'animation-delay': animationDelay
-              }
-            };
-          }
-        }
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+      /* harmony import */
+
+
+      var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+      /*! @angular/common */
+      "ofXK");
+      /* harmony import */
+
+
+      var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+      /*! @angular/forms */
+      "3Pt+");
+      /* harmony import */
+
+
+      var _ionic_angular__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(
+      /*! @ionic/angular */
+      "TEn/");
+      /* harmony import */
+
+
+      var _explore_container_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(
+      /*! ./explore-container.component */
+      "QQAA");
+
+      var ExploreContainerComponentModule = function ExploreContainerComponentModule() {
+        _classCallCheck(this, ExploreContainerComponentModule);
       };
-      var SPINNERS = spinners;
+
+      ExploreContainerComponentModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"], _ionic_angular__WEBPACK_IMPORTED_MODULE_4__["IonicModule"]],
+        declarations: [_explore_container_component__WEBPACK_IMPORTED_MODULE_5__["ExploreContainerComponent"]],
+        exports: [_explore_container_component__WEBPACK_IMPORTED_MODULE_5__["ExploreContainerComponent"]]
+      })], ExploreContainerComponentModule);
       /***/
     },
 
     /***/
-    "./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js":
-    /*!*************************************************************!*\
-      !*** ./node_modules/@ionic/core/dist/esm/theme-ff3fc52f.js ***!
-      \*************************************************************/
+    "vx+v":
+    /*!************************************************!*\
+      !*** ./src/app/pipes/url-website-name.pipe.ts ***!
+      \************************************************/
 
-    /*! exports provided: c, g, h, o */
+    /*! exports provided: UrlWebsiteNamePipe */
 
     /***/
-    function node_modulesIonicCoreDistEsmThemeFf3fc52fJs(module, __webpack_exports__, __webpack_require__) {
+    function vxV(module, __webpack_exports__, __webpack_require__) {
       "use strict";
 
       __webpack_require__.r(__webpack_exports__);
       /* harmony export (binding) */
 
 
-      __webpack_require__.d(__webpack_exports__, "c", function () {
-        return createColorClasses;
+      __webpack_require__.d(__webpack_exports__, "UrlWebsiteNamePipe", function () {
+        return UrlWebsiteNamePipe;
       });
-      /* harmony export (binding) */
+      /* harmony import */
 
 
-      __webpack_require__.d(__webpack_exports__, "g", function () {
-        return getClassMap;
-      });
-      /* harmony export (binding) */
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
 
 
-      __webpack_require__.d(__webpack_exports__, "h", function () {
-        return hostContext;
-      });
-      /* harmony export (binding) */
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
 
-
-      __webpack_require__.d(__webpack_exports__, "o", function () {
-        return openURL;
-      });
-
-      var hostContext = function hostContext(selector, el) {
-        return el.closest(selector) !== null;
-      };
-      /**
-       * Create the mode and color classes for the component based on the classes passed in
-       */
-
-
-      var createColorClasses = function createColorClasses(color, cssClassMap) {
-        return typeof color === 'string' && color.length > 0 ? Object.assign(_defineProperty({
-          'ion-color': true
-        }, "ion-color-".concat(color), true), cssClassMap) : cssClassMap;
-      };
-
-      var getClassList = function getClassList(classes) {
-        if (classes !== undefined) {
-          var array = Array.isArray(classes) ? classes : classes.split(' ');
-          return array.filter(function (c) {
-            return c != null;
-          }).map(function (c) {
-            return c.trim();
-          }).filter(function (c) {
-            return c !== '';
-          });
+      var UrlWebsiteNamePipe = /*#__PURE__*/function () {
+        function UrlWebsiteNamePipe() {
+          _classCallCheck(this, UrlWebsiteNamePipe);
         }
 
-        return [];
-      };
+        _createClass(UrlWebsiteNamePipe, [{
+          key: "transform",
+          value: function transform(url) {
+            var urlWithoutHttp = url.substring(url.indexOf("//") + 2);
+            var finalUrl = urlWithoutHttp.substring(0, urlWithoutHttp.indexOf("/"));
+            finalUrl = finalUrl.replace('www.', '');
+            finalUrl = finalUrl.replace('.es', '');
+            finalUrl = finalUrl.replace('.com', '');
+            finalUrl = finalUrl.replace('ver.', '');
+            finalUrl = finalUrl.replace('plus', '+');
+            finalUrl = finalUrl.replace('.', ' ');
+            finalUrl = finalUrl.replace('play google', 'google play');
+            finalUrl = finalUrl.replace('app primevideo', 'amazon prime');
+            finalUrl = finalUrl.toUpperCase();
+            return finalUrl;
+          }
+        }]);
 
-      var getClassMap = function getClassMap(classes) {
-        var map = {};
-        getClassList(classes).forEach(function (c) {
-          return map[c] = true;
-        });
-        return map;
-      };
-
-      var SCHEME = /^[a-z][a-z0-9+\-.]*:/;
-
-      var openURL = /*#__PURE__*/function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(url, ev, direction, animation) {
-          var router;
-          return regeneratorRuntime.wrap(function _callee2$(_context2) {
-            while (1) {
-              switch (_context2.prev = _context2.next) {
-                case 0:
-                  if (!(url != null && url[0] !== '#' && !SCHEME.test(url))) {
-                    _context2.next = 5;
-                    break;
-                  }
-
-                  router = document.querySelector('ion-router');
-
-                  if (!router) {
-                    _context2.next = 5;
-                    break;
-                  }
-
-                  if (ev != null) {
-                    ev.preventDefault();
-                  }
-
-                  return _context2.abrupt("return", router.push(url, direction, animation));
-
-                case 5:
-                  return _context2.abrupt("return", false);
-
-                case 6:
-                case "end":
-                  return _context2.stop();
-              }
-            }
-          }, _callee2);
-        }));
-
-        return function openURL(_x6, _x7, _x8, _x9) {
-          return _ref2.apply(this, arguments);
-        };
+        return UrlWebsiteNamePipe;
       }();
-      /***/
 
+      UrlWebsiteNamePipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'urlWebsiteName'
+      })], UrlWebsiteNamePipe);
+      /***/
+    },
+
+    /***/
+    "xhhz":
+    /*!************************************!*\
+      !*** ./src/app/pipes/year.pipe.ts ***!
+      \************************************/
+
+    /*! exports provided: YearPipe */
+
+    /***/
+    function xhhz(module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      __webpack_require__.r(__webpack_exports__);
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "YearPipe", function () {
+        return YearPipe;
+      });
+      /* harmony import */
+
+
+      var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+      /*! tslib */
+      "mrSG");
+      /* harmony import */
+
+
+      var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+      /*! @angular/core */
+      "fXoL");
+
+      var YearPipe = /*#__PURE__*/function () {
+        function YearPipe() {
+          _classCallCheck(this, YearPipe);
+        }
+
+        _createClass(YearPipe, [{
+          key: "transform",
+          value: function transform(date) {
+            var _date = new Date(date);
+
+            return _date.getFullYear();
+          }
+        }]);
+
+        return YearPipe;
+      }();
+
+      YearPipe = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Pipe"])({
+        name: 'year'
+      })], YearPipe);
+      /***/
     }
   }]);
 })();
