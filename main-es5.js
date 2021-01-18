@@ -1028,7 +1028,7 @@
       /*! @angular/router */
       "tyNb");
 
-      var URL = "https://prueba-api.plexdescargas.com/api/auth";
+      var URL = "https://api.movin.tk/api/auth";
 
       var AuthService = /*#__PURE__*/function () {
         function AuthService(http, router) {

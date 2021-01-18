@@ -764,7 +764,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const URL = "https://prueba-api.plexdescargas.com/api/auth";
+const URL = "https://api.movin.tk/api/auth";
 let AuthService = class AuthService {
     constructor(http, router) {
         this.http = http;
