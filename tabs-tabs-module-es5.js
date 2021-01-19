@@ -740,7 +740,7 @@
       /*! @angular/common/http */
       "tk/3");
 
-      var URL = "https://api.movin.tk/api/search";
+      var URL = "https://prueba-api.plexdescargas.com/api/search";
 
       var JustwatchService = /*#__PURE__*/function () {
         function JustwatchService(http) {

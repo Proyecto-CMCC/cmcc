@@ -455,7 +455,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const URL = "https://api.movin.tk/api/search";
+const URL = "https://prueba-api.plexdescargas.com/api/search";
 let JustwatchService = class JustwatchService {
     constructor(http) {
         this.http = http;
