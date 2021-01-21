@@ -6,14 +6,14 @@
     <style>
       html,
       body {
-        height: 100%;
+        height: 100vh;
         width: 100%;
         margin: 0px;
         background: linear-gradient(90deg, rgba(47,54,64,1) 23%, rgba(24,27,32,1) 100%);
       }
 
       .moon {
-        background: linear-gradient(90deg, #00843c 8%, #2ffc8d 100%);
+        background: linear-gradient(90deg, #ffffff 8%, #717171  100%);
         position: absolute;
         top: -100px;
         left: -300px;
@@ -22,6 +22,7 @@
         content: '';
         border-radius: 100%;
         box-shadow: 0px 0px 30px -4px rgba(0,0,0,0.5);
+        z-index: 1;
       }
 
       .moon__crater {
@@ -30,6 +31,7 @@
         border-radius: 100%;
         background: linear-gradient(90deg, rgba(122,122,122,1) 38%, rgba(195,195,195,1) 100%);
         opacity: 0.6;
+        z-index: 2;
       }
 
       .moon__crater1 {
@@ -37,6 +39,7 @@
         left: 500px;
         width: 60px;
         height: 180px;
+        z-index: 2;
       }
 
       .moon__crater2 {
@@ -45,6 +48,7 @@
         width: 40px;
         height: 80px;
         transform: rotate(55deg);
+        z-index: 2;
       }
 
       .moon__crater3 {
@@ -53,6 +57,7 @@
         width: 65px;
         height: 120px;
         transform: rotate(250deg);
+        z-index: 2;
       }
 
       .star {
@@ -109,8 +114,8 @@
         left: 100px;
         top: 400px;
         transform: translateY(-60%);
-        font-family: "Times New Roman", Times, serif;
         color: #363e49;
+        z-index: 2;
       }
 
       .error__title {
@@ -131,29 +136,31 @@
         margin-right: 0.5em;
         padding: 0.5em 2em;
         outline: none;
-        border: 2px solid #00ab6c;
+        border: 2px solid #2ffc8d;
         background-color: transparent;
         border-radius: 8em;
-        color: #576375;
+        color: #484848;
+        font-weight: 900;
         cursor: pointer;
         transition-duration: 0.2s;
         font-size: 0.75em;
-        font-family: 'Righteous', cursive;
       }
 
       .error__button:hover {
-        color: #21252c;
+        color: #2ffc8d;
       }
 
       .error__button--active {
-        background-color: #00ab6c;
-        border: 2px solid #00ab6c;
-        color: white;
+        background-color: #2ffc8d;
+        border: 2px solid #2ffc8d;
+        color: #484848;
+        font-weight: 900;
       }
 
       .error__button--active:hover {
         box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.5);
-        color: white;
+        color: #484848;
+        font-weight: 900;
       }
 
       .astronaut {
@@ -223,7 +230,7 @@
       }
 
       .astronaut__body__chest {
-        background-color: #d9d9d9;
+        background-color: #2ffc8d;
         position: absolute;
         top: 140px;
         left: 68px;
